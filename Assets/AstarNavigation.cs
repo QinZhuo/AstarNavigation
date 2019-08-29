@@ -161,7 +161,7 @@ namespace AstarNavigation
         {
             if (FindPath(this[startX, startY], this[endX, endY]))
             {
-                var currentNode = this[endX, endX];
+                var currentNode = this[endX, endY];
                 PathNode currentPath =null;
                 PathNode lastPath = null;
                 while (currentNode != this[startX, startY])
