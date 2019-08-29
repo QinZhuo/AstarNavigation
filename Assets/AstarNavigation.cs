@@ -164,12 +164,9 @@ namespace AstarNavigation
                 var currentNode = this[endX, endY];
                 PathNode currentPath =null;
                 PathNode lastPath = null;
-                while (currentNode != this[startX, startY])
+                while (currentNode !=null)
                 {
-                    if (currentNode.lastNode == null)
-                    {
-                        return null;
-                    }
+                    
 
                     currentPath = new PathNode()
                     {
@@ -179,6 +176,7 @@ namespace AstarNavigation
                     };
                     currentNode = currentNode.lastNode;
                     lastPath = currentPath;
+                    
                 }
                 return new NavPath() {start=currentPath};
             }
